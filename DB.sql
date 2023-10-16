@@ -3,11 +3,20 @@ CREATE DATABASE JAM;
 USE JAM;
 
 CREATE TABLE article(
-    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     regDate DATETIME NOT NULL,
     updateDate DATETIME NOT NULL,
-    title CHAR(100) NOT NULL,
+    title VARCHAR(100) NOT NULL,
     `body` TEXT NOT NULL
+);
+
+CREATE TABLE `member`(
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    loginId VARCHAR(50) NOT NULL,
+    loginPw VARCHAR(100) NOT NULL,
+    `name` VARCHAR(20) NOT NULL
 );
 
 SHOW TABLES;
@@ -19,10 +28,18 @@ updateDate = NOW(),
 title = CONCAT('제목', RAND()),
 `body` = CONCAT('내용', RAND());
 
+INSERT INTO `member`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test',
+loginPw = 'test',
+`name` = '유저1';
 
 SELECT * 
 FROM article;
 
+SELECT * 
+FROM `member`;
 
 -- INSERT INTO article
 -- SET regDate = NOW(),
