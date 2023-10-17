@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 DROP DATABASE IF EXISTS `JAM`;
 CREATE DATABASE JAM;
 USE JAM;
@@ -47,10 +46,3 @@ FROM `member`;
 -- updateDate = NOW(),
 -- title = CONCAT('제목', ROUND(RAND() * 100)),
 -- `body` = CONCAT('내용', ROUND(RAND() * 100));
-=======
-DROP DATABASE IF EXISTS 'JAM';
-
-CREATE DATABASE JAM;
-
-USE JAM;
->>>>>>> fa81bfe9310edd6fa2e59eb7329037c8547751cc
