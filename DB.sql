@@ -10,6 +10,8 @@ CREATE TABLE article(
     `body` TEXT NOT NULL
 );
 
+ALTER TABLE article ADD COLUMN memberId INT UNSIGNED NOT NULL AFTER updateDate;
+
 CREATE TABLE `member`(
     id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     regDate DATETIME NOT NULL,
@@ -25,6 +27,7 @@ DESC article;
 INSERT INTO article
 SET regDate = NOW(),
 updateDate = NOW(),
+memberId = 1,
 title = CONCAT('제목', RAND()),
 `body` = CONCAT('내용', RAND());
 
